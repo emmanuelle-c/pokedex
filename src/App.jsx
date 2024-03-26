@@ -12,12 +12,11 @@ function App() {
     setPokemonIndex(pokemonIndex -1);
   };
 
-  if (pokemonIndex )
   return (
     <div>
       <PokemonCard pokemon ={pokemonList[pokemonIndex]}/> 
-      <button onClick={handlePreviousClick}>Précédent</button>
-      <button onClick={handleNextClick}>Suivant</button>
+      {pokemonIndex > 0 ? <button onClick={handlePreviousClick}>Précédent</button> : <p> </p>}
+      {pokemonIndex < pokemonList.length -1 ? <button onClick={handleNextClick}>Suivant</button> : <p> </p>}
     </div>
   );
 }
