@@ -1,6 +1,7 @@
 import PokemonCard from "./components/PokemonCard/PokemonCard";
 import { useState} from "react";
 import "/Users/Manue_1/Documents/WCS-02:24/quetes/quetes_react/pokedex/src/App.css";
+import NavBar from "./components/NavBar/NavBar"
 
 function App() {
   const [pokemonIndex, setPokemonIndex] = useState(0);
@@ -15,11 +16,8 @@ function App() {
 
   return (
     <div>
+      <NavBar pokemonIndex = {pokemonIndex} pokemonList= {pokemonList} handleNextClick= {handleNextClick} handlePreviousClick= {handlePreviousClick}/>
       <PokemonCard pokemon ={pokemonList[pokemonIndex]}/>
-      <div id= "button-container">
-      {pokemonIndex > 0 ? <button onClick={handlePreviousClick}>Précédent</button> : <p> </p>}
-      {pokemonIndex < pokemonList.length -1 ? <button onClick={handleNextClick}>Suivant</button> : <p> </p>}
-      </div>
     </div>
   );
 }
