@@ -4,19 +4,16 @@ import "/Users/Manue_1/Documents/WCS-02:24/quetes/quetes_react/pokedex/src/App.c
 import NavBar from "./components/NavBar/NavBar"
 
 function App() {
-  const [pokemonIndex, setPokemonIndex] = useState(0);
 
-  const handleNextClick = () => {
-    setPokemonIndex(pokemonIndex +1);
-  };
+  const [pokemonIndex, setPokemon] = useState(0);
 
-  const handlePreviousClick = () => {
-    setPokemonIndex(pokemonIndex -1);
-  };
+  const handleClick = (index) => {
+    setPokemon(index);
+  }
 
   return (
     <div>
-      <NavBar pokemonIndex = {pokemonIndex} pokemonList= {pokemonList} handleNextClick= {handleNextClick} handlePreviousClick= {handlePreviousClick}/>
+      <NavBar pokemonList= {pokemonList} handleClick= {handleClick}/>
       <PokemonCard pokemon ={pokemonList[pokemonIndex]}/>
     </div>
   );
