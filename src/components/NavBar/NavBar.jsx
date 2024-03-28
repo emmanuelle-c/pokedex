@@ -1,4 +1,6 @@
-function NavBar ({ pokemonList, handleClick}) {
+
+function NavBar ({ pokemonList, handleClick, pokemonIndex}) {
+
 
     return (
         <>
